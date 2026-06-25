@@ -34,7 +34,7 @@ jobs:
         run: sudo apt install -y tomcat9 tomcat9-admin
 
       - name: restart tomcat9
-        run: systemctl restart tomcat9
+        run: sudo systemctl restart tomcat9
 
       - name: Deploy WAR to Tomcat
         run : |
