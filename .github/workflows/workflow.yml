@@ -13,7 +13,7 @@ jobs:
       TOMCAT_WEBAPPS: "/var/lib/tomcat9/webapps"
     steps:
       - name: Checkout source code
-        uses: actions /checkout@v4
+        uses: actions/checkout@v4
 
       - name: Make build.sh executable
         run: sudo chmod +x build.sh
