@@ -9,7 +9,7 @@ jobs:
     runs-on: [self-hosted ,dev]
 
     env:
-      WAR_NAME: "ROOT.WAR"
+      WAR_NAME: "ROOT.war"
       TOMCAT_WEBAPPS: "/var/lib/tomcat9/webapps"
     steps:
       - name: Checkout source code
@@ -19,7 +19,7 @@ jobs:
         run: sudo chmod +x build.sh
 
       - name: REMOVE WAR FILE
-        run: sudo rm -rf ROOT.WAR
+        run: sudo rm -rf ROOT.War
 
       - name: INSTALL OPENJDK-8
         run: sudo bash -c "apt update && apt install -y openjdk-8-jdk"
@@ -39,5 +39,5 @@ jobs:
       - name: Deploy WAR to Tomcat
         run : |
           sudo rm -rf "$TOMCAT_WEBAPPS"/*
-          sudo cp target/*.war "$TOMCAT_WEBAPPS/ROOT.war
+          sudo cp "$WAR_NAME" "TOMCAT_WEBAPPS"
 
