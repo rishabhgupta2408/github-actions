@@ -39,4 +39,5 @@ jobs:
       - name: Deploy WAR to Tomcat
         run : |
           sudo rm -rf "$TOMCAT_WEBAPPS"/*
-          sudo cp "$WAR_NAME" "$TOMCAT_WEBAPPS"
+          sudo cp target/*.war "$TOMCAT_WEBAPPS/ROOT.war
+
