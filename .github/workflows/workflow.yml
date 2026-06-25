@@ -22,15 +22,13 @@ jobs:
         run: sudo rm -rf ROOT.WAR
 
       - name: INSTALL OPENJDK-8
-        run: |
-          sudo apt update  
-          sudo apt install -y openjdk-8-jdk
+        run: sudo bash -c "apt update && apt install -y openjdk-8-jdk"
 
       - name: build WAR using build.sh
         run: ./build.sh
 
       - name: INSTALL OPENJDK-11
-        run: sudo apt update && apt install -y openjdk-11-jdk
+        run: sudo apt update && sudo apt install -y openjdk-11-jdk
 
       - name: Install Tomcat
         run: sudo apt install -y tomcat9 tomcat9-admin
